@@ -25,7 +25,7 @@ LIMIT 1;
 /* Answer: Peacock*/
 
 /* PART C */
-/* assuming that 'ordered most' implies total quantity ordered, and not just how many orders it was a part of */
+/* assuming that 'ordered most' implies total quantity ordered, and not just the number of orders*/
 
 SELECT p.ProductName, SUM(od.Quantity) AS TotalOrdered
 FROM Orders o
@@ -40,4 +40,5 @@ GROUP BY p.ProductID
 ORDER BY SUM(od.Quantity) DESC
 LIMIT 1;
 
-/* Answer: Boston Crab Meat with 160 ordered */
+/* Answer: Boston Crab Meat with 160 ordered over 4 orders */
+/* Alternative Answer: Gorgonzola Telino with 125 ordered over 5 orders */
